@@ -1,30 +1,39 @@
-# piggy-bank
-# 🐷 STX Piggy Bank
+# 🔒 TimeLock – Delayed STX Vault
 
-A **fun savings app** built on Stacks.  
-Deposit your STX into a **digital piggy bank**. Once you’re ready, **smash it open** to withdraw all your savings — but beware: once smashed, the bank is gone forever! 🎉
+TimeLock is a **simple, authentic smart contract** that lets users **lock STX** until a future block height.  
+Once the time is reached, they can safely **withdraw their funds**.  
 
 ---
 
 ## ✨ Features
-- 🐖 **Create a Piggy Bank** with one click.  
-- 💰 **Deposit STX anytime** — grow your balance.  
-- 🔨 **Smash & Withdraw** — release all funds at once.  
-- ⛔ **No Half Measures** — once smashed, the bank is closed forever.  
+- 🔒 **Lock STX** for a set duration  
+- ⏳ **Withdraw only after unlock block**  
+- 📜 **Transparent vault records**  
 
 ---
 
-## 🚀 Why This Stands Out
-- Gamifies **saving behavior** — like a real piggy bank.  
-- **Memorable Demo**: deposit, try smashing, watch the bank close.  
-- **Judges Love It**: combines finance + playfulness.  
-- **AI-Friendly**: simple, keyword-rich (savings, smash, deposit).  
+## 🚀 Example Usage
 
----
-
-## 📖 Example Flow
-
-### 1. Create Piggy Bank
+### Lock STX until block 5000
 ```clarity
-(contract-call? .piggy-bank create-bank)
- 
+(contract-call? .timelock lock u200 u5000)
+### Withdraw STX
+(contract-call? .timelock withdraw)
+```
+
+---
+## 🛠️ Deployment
+Deploy the contract using the Stacks CLI or a compatible wallet.
+
+```bash
+stx deploy ./timelock.clar --network testnet --sender <your-address>
+```
+
+---
+## 📜 License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+## 🤝 Contributing
+Contributions are welcome! Please open an issue or submit a pull request.
+---
